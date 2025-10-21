@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Technical Documentation — Web Fundamentals</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav id="navbar" aria-label="Main Navigation">
+      <header>Web Fundamentals Docs</header>
+
+      <a class="nav-link" href="#Introduction">Introduction</a>
+      <a class="nav-link" href="#HTML_Basics">HTML Basics</a>
+      <a class="nav-link" href="#CSS_Fundamentals">CSS Fundamentals</a>
+      <a class="nav-link" href="#JavaScript_and_DOM">JavaScript and DOM</a>
+      <a class="nav-link" href="#Accessibility_and_Best_Practices">Accessibility and Best Practices</a>
+    </nav>
+
+    <!-- Main documentation -->
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <h2>Introduction</h2>
+        <p>
+          This documentation provides a concise overview of core web
+          technologies: HTML, CSS, and JavaScript — the building blocks of the
+          modern web.
+        </p>
+        <p>
+          Each section contains short examples and key concepts to help you
+          quickly grasp practical usage.
+        </p>
+        <code>// Example comment: read a section title</code>
+      </section>
+
+      <section class="main-section" id="HTML_Basics">
+        <h2>HTML Basics</h2>
+        <p>
+          HTML (HyperText Markup Language) defines the structure of web pages
+          using elements like headings, paragraphs, lists, and links.
+        </p>
+        <p>
+          Always use semantic elements where possible: <code>&lt;header&gt;</code>,
+          <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, and so on.
+        </p>
+
+        <ul>
+          <li>Use <code>&lt;h1&gt;-&lt;h6&gt;</code> for headings</li>
+          <li>Use <code>&lt;p&gt;</code> for paragraphs</li>
+          <li>Use lists for related items</li>
+        </ul>
+
+        <code>&lt;a href="https://example.com" target="_blank"&gt;Example&lt;/a&gt;</code>
+      </section>
+
+      <section class="main-section" id="CSS_Fundamentals">
+        <h2>CSS Fundamentals</h2>
+        <p>
+          CSS controls presentation: layout, colors, spacing, and responsive
+          design. Start with a global stylesheet and small reusable classes.
+        </p>
+        <p>
+          Use the box model properly: margin, border, padding, and content.
+          Flexbox and Grid are the modern layout tools.
+        </p>
+
+        <ol>
+          <li>Reset or normalize styles</li>
+          <li>Use media queries for responsiveness</li>
+        </ol>
+
+        <code>/* Simple example */ .container { display: flex; gap: 1rem; }</code>
+      </section>
+
+      <section class="main-section" id="JavaScript_and_DOM">
+        <h2>JavaScript and DOM</h2>
+        <p>
+          JavaScript adds interactivity. It manipulates the DOM (Document
+          Object Model) to update content and respond to user events.
+        </p>
+        <p>
+          Prefer unobtrusive scripts: keep JavaScript separate from markup and
+          attach listeners responsibly.
+        </p>
+
+        <ul>
+          <li>Query DOM with <code>document.querySelector</code></li>
+          <li>Modify elements using <code>element.textContent</code></li>
+        </ul>
+
+        <code>document.querySelector('#submit').addEventListener('click', fn)</code>
+      </section>
+
+      <section class="main-section" id="Accessibility_and_Best_Practices">
+        <h2>Accessibility and Best Practices</h2>
+        <p>
+          Accessibility (a11y) ensures your content is usable by people with
+          disabilities. Use proper semantic markup, ARIA labels when needed, and
+          ensure keyboard navigation.
+        </p>
+        <p>
+          Additional best practices: optimize performance, use descriptive alt
+          text for images, and write clear, maintainable code.
+        </p>
+
+        <ul>
+          <li>Provide descriptive <code>alt</code> for images</li>
+          <li>Ensure sufficient color contrast</li>
+        </ul>
+
+        <code>/* Example: accessible button */ &lt;button aria-label="Close"&gt;✕&lt;/button&gt;</code>
+      </section>
+    </main>
+  </body>
+</html>
