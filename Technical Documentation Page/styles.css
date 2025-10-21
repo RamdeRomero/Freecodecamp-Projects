@@ -1,0 +1,141 @@
+/* ---- Base styles ---- */
+:root{
+  --nav-width: 260px;
+  --accent: #2b7a78;
+  --muted: #6b6b6b;
+  --bg: #f7f9fb;
+}
+
+*{box-sizing: border-box}
+html,body{height:100%;}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #f0f6fb 0%, #ffffff 100%);
+  color:#222;
+  line-height:1.5;
+}
+
+/* ---- Navbar (left on wide screens) ---- */
+#navbar{
+  background: linear-gradient(180deg, #ffffff, #f8fbfc);
+  border-right: 1px solid rgba(43,122,120,0.06);
+  padding: 1rem;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: var(--nav-width);
+}
+
+/* position behavior for wide screens handled in media query below */
+#navbar header{
+  font-weight:700;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  color: var(--accent);
+}
+
+/* nav links */
+#navbar .nav-link{
+  display:block;
+  padding: 0.5rem 0.4rem;
+  margin: 0.2rem 0;
+  color:#1f3332;
+  text-decoration:none;
+  border-radius:6px;
+  font-size:0.96rem;
+}
+#navbar .nav-link:hover,
+#navbar .nav-link:focus{
+  background: rgba(43,122,120,0.06);
+  outline: none;
+}
+
+/* ---- Main doc area ---- */
+#main-doc{
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ensure main content doesn't hide behind fixed navbar on wide screens (see media query) */
+.main-section{
+  background: #fff;
+  margin-bottom: 1.25rem;
+  padding: 1rem 1.15rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(12,24,39,0.04);
+  border: 1px solid rgba(12,24,39,0.03);
+}
+.main-section h2{
+  margin-top:0;
+  color: #184e4d;
+  font-size: 1.15rem;
+}
+
+/* inline code */
+code{
+  display:inline-block;
+  background: #f3f6f7;
+  padding: 0.12rem 0.35rem;
+  border-radius: 5px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+  font-size: 0.95rem;
+}
+
+/* Lists */
+.main-section ul,
+.main-section ol{
+  margin: 0.5rem 0 0.75rem 1.25rem;
+}
+
+/* Responsive adjustments */
+@media (min-width: 900px){
+  /* Make navbar fixed on left and main-doc use margin-left to avoid overlap */
+  #navbar{
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  #main-doc{
+    margin-left: calc(var(--nav-width) + 2rem);
+    max-width: 980px;
+    padding: 2.5rem;
+  }
+}
+
+/* Mobile and small screens: navbar becomes horizontal top nav */
+@media (max-width: 899px){
+  #navbar{
+    position: sticky;
+    top: 0;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  #navbar header{
+    margin-right: 0.6rem;
+  }
+
+  #navbar .nav-link{
+    display: inline-block;
+    padding: 0.45rem 0.6rem;
+    margin: 0;
+  }
+
+  /* main-doc full width */
+  #main-doc{
+    margin: 0.6rem;
+    padding-top: 1rem;
+  }
+}
+
+/* small visual polish */
+@media (prefers-reduced-motion: no-preference){
+  .main-section{ transition: transform .18s ease, box-shadow .18s ease; }
+  .main-section:hover{ transform: translateY(-4px); box-shadow: 0 10px 25px rgba(12,24,39,0.07); }
+}
